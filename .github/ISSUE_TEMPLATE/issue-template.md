@@ -7,5 +7,5 @@ assignees: ''
 
 ---
 
-##ISSUE
+## ISSUE
 * 여기에 작업 내용을 적어주세요
