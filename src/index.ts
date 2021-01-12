@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
 
 // app.use('/users', routes.users);
 
-const PORT = 4000;
+const PORT = 2527;
 
 app.listen(PORT, () => {
   console.log(`Server is Running : Port ${PORT}`);
