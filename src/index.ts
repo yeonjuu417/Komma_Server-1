@@ -1,21 +1,51 @@
 import "reflect-metadata";
-import {createConnection} from "typeorm";
-import {User} from "./entity/User";
+import express from "express";
+import session from "express-session";
+import cors from "cors";
+import bodyParser from "body-parser";
+import { createConnection } from "typeorm";
+import "dotenv/config";
+// import * as routes from "./routes";
 
-createConnection().then(async connection => {
+createConnection()
+  .then(() => console.log("typeorm connection complete"))
+  .catch((error) => console.log("TypeORM connection error: ", error));
 
-    console.log("Inserting a new user into the database...");
-    const user = new User();
-    user.firstName = "Timber";
-    user.lastName = "Saw";
-    user.age = 25;
-    await connection.manager.save(user);
-    console.log("Saved a new user with id: " + user.id);
+const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
-    console.log("Loading users from the database...");
-    const users = await connection.manager.find(User);
-    console.log("Loaded users: ", users);
+app.use(
+  cors({
+    origin: ['*'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+    credentials: true,
+  })
+);
 
-    console.log("Here you can setup and run express/koa/any other framework.");
+app.use(
+  session({
+    secret: '@codestates',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+      maxAge: 24 * 6 * 60 * 10000,
+      httpOnly: true,
+      secure: true,
+      sameSite: 'none',
+    }
+  }));
 
-}).catch(error => console.log(error));
+app.get('/', (req, res) => {
+  res.status(200).send('Success');
+});
+
+// app.use('/users', routes.users);
+
+const PORT = 4000;
+
+app.listen(PORT, () => {
+  console.log(`Server is Running : Port ${PORT}`);
+});
+
+module.exports = app;
