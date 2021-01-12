@@ -1,10 +1,12 @@
-{
+
+const dotenv = require('dotenv').config()
+module.exports = {
    "type": "mysql",
-   "host": "komma.cstvw6se36ud.ap-northeast-2.rds.amazonaws.com",
-   "port": 2524,
-   "username": "komma",
-   "password": "komma2527",
-   "database": "Komma",
+   "host": process.env.DATABASE_HOST,
+   "port": process.env.DATABASE_PORT,
+   "username": process.env.DATABASE_USERNAME,
+   "password": process.env.DATABASE_PASSWORD,
+   "database":  process.env.DATABASE_NAME,
    "synchronize": true,
    "logging": false,
    "entities": [
