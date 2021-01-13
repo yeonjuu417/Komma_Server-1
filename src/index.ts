@@ -2,6 +2,7 @@ import "reflect-metadata";
 import express from "express";
 import session from "express-session";
 import cors from "cors";
+import logger from "morgan";
 import bodyParser from "body-parser";
 import { createConnection } from "typeorm";
 import "dotenv/config";
@@ -12,6 +13,7 @@ createConnection()
   .catch((error) => console.log("TypeORM connection error: ", error));
 
 const app = express();
+app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
