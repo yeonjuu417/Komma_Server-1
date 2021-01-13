@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
     // 컴파일 결과물을 어떤 버전으로 할 것인지
-    "target": "ES5",
+    "target": "ES6",
     // 컴파일 된 모듈의 결과물을 어떤 모듈 시스템으로 할 것인지
     "module": "commonjs",
     "lib": ["ES5", "ES6"],
+    "resolveJsonModule": true,
     // 모든 TS타입을 체크 할건지
     "moduleResolution": "node",
     "esModuleInterop": true,
