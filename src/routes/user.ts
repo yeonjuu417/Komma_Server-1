@@ -1,6 +1,5 @@
 import * as express from "express";
 const router = express.Router();
-
 const { usersController } = require('../controller');
 
 // * POST /users/login

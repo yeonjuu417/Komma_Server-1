@@ -7,6 +7,6 @@ module.exports = {
     songlist: require('./songlist'),
     saveplaylist: require('./saveplaylist'),
     updateplaylisttitle: require('./updateplaylisttitle'),
-    deleteplaylist: require('./deleteplaylist'),
+    del: require('./deleterecipe'),
   };
   
