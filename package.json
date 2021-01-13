@@ -5,9 +5,10 @@
    "main": "index.js",
    "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "ts-node src/index.ts",
-      "start1": "tsc && dist/index.js",
-      "pm2": "tsc && pm2 start dist/index.js"
+      "start": "tsc && node dist/index.js",
+      "dev": "tsc && nodemon dist/index.js",
+      "pm2:start": "tsc && pm2 start dist/index.js",
+      "pm2:stop": "pm2 stop dist/index.js"
    },
    "repository": {
       "type": "git",
