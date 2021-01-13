@@ -6,7 +6,7 @@ import logger from "morgan";
 import bodyParser from "body-parser";
 import { createConnection } from "typeorm";
 import "dotenv/config";
-// import * as routes from "./routes";
+const usersRouter = require('./routes/user');
 
 createConnection()
   .then(() => console.log("typeorm connection complete"))
@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
   res.status(200).send('Success');
 });
 
-// app.use('/users', routes.users);
+app.use('/users', usersRouter);
 
 const PORT = 2527;
 
