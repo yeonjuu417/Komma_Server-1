@@ -4,9 +4,13 @@ import session from "express-session";
 import cors from "cors";
 import logger from "morgan";
 import bodyParser from "body-parser";
+import passport from 'passport'
 import { createConnection } from "typeorm";
 import "dotenv/config";
+
+import "./passport";
 const usersRouter = require('./routes/user');
+
 
 createConnection()
   .then(() => console.log("typeorm connection complete"))
@@ -24,6 +28,8 @@ app.use(
     credentials: true,
   })
 );
+
+app.use(passport.initialize());
 
 app.use(
   session({

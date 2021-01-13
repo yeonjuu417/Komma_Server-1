@@ -9,4 +9,3 @@ import updateplaylisttitle from "./updateplaylisttitle";
 import deleteplaylist from "./deleteplaylist";
 
 export { login, logout, signin, userinfo, userinfoup, songlist, saveplaylist, updateplaylisttitle, deleteplaylist }; 
-  
