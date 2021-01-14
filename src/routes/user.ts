@@ -8,7 +8,7 @@ router.post('/login', usersController.login);
 // * POST /users/logout
 router.post('/logout', usersController.logout);
 // * POST /users/signup
-router.post('/signin', usersController.signin);
+router.post('/signup', usersController.signup);
 // * get /users/userinfo
 router.get('/userinfo', usersController.userinfo);
 // * get /users/userinfoup
