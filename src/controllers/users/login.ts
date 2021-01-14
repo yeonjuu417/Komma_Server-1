@@ -27,7 +27,7 @@ export default async (req: Request, res: Response) => {
     const hashPwd = await createHashedPassword(password);
     await getManager()
     .createQueryBuilder(User, "User")
-    .where({ password: password })
+    .where({ password: hashPwd })
     .getOne()
     .then(data => {
       // res.send({message : "Login successfully" })
