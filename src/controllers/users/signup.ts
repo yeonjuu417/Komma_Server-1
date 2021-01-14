@@ -36,9 +36,6 @@ export default async (req: Request, res: Response) => {
                 });
             });
             const {hashPwd , salt} = await createHashedPassword(password);
-            console.log(hashPwd);
-            console.log(salt);
-            
             await getConnection()
                 .createQueryBuilder()
                 .insert()
