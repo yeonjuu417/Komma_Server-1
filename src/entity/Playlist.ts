@@ -4,7 +4,7 @@ import Savesong from "./Savesong";
 
 @Entity()
 export default class Playlist extends BaseEntity {
-
+  
   @PrimaryGeneratedColumn()
   id: number;
 
