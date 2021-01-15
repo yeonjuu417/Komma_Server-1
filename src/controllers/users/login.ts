@@ -29,7 +29,7 @@ export default async (req: Request, res: Response) => {
 
     await getManager()
     .createQueryBuilder(User, "User")
-    .where({ password: password })
+    .where({ password: hashPwd })
     .getOne()
     .then(data => {
       // res.send({message : "Login successfully" })
