@@ -17,6 +17,7 @@ export default async (req: Request, res: Response) => {
     res.status(400).send({ data: null, message: "not authorized" })
   } else {
     const { salt } = user;
+
     const createHashedPassword = (plainpassword) =>
       new Promise(async (resolve, reject) => {
         crypto.pbkdf2(plainpassword, salt, 1000, 64, 'sha512', (err, key) => {
@@ -25,6 +26,7 @@ export default async (req: Request, res: Response) => {
         });
       });
     const hashPwd = await createHashedPassword(password);
+
     await getManager()
     .createQueryBuilder(User, "User")
     .where({ password: password })

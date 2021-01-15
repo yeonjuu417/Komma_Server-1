@@ -1,20 +1,21 @@
-import {Entity, PrimaryGeneratedColumn, Column, BaseEntity} from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, BaseEntity } from "typeorm";
 
 @Entity()
-export class Song extends BaseEntity{
+export default class Song extends BaseEntity {
 
-    @PrimaryGeneratedColumn()
-    id: number;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column()
-    title: string;
+  @Column()
+  title: string;
 
-    @Column()
-    iconImg: string;
+  @Column()
+  iconImg: string;
 
-    @Column()
-    soundFile: string;
+  @Column()
+  soundFile: string;
 
-    @Column({default : 50})
-    defaltVoulume: number;
+  @Column({ default: 50 })
+  defaltVoulume: number;
+
 }
