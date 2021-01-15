@@ -1,20 +1,22 @@
-import {Entity, PrimaryGeneratedColumn, Column, BaseEntity} from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, BaseEntity, ManyToOne } from "typeorm";
+import Playlist from "./Playlist";
 
 @Entity()
-export default class Savesong extends BaseEntity{
+export default class Savesong extends BaseEntity {
 
-    @PrimaryGeneratedColumn()
-    id: number;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column()
-    playList: number;
+  @Column()
+  title: string;
 
-    @Column()
-    title: string;
+  @Column()
+  soundFile: string;
 
-    @Column()
-    soundFile: string;
+  @Column()
+  customVoulume: number;
 
-    @Column()
-    customVoulume: number;
+  @ManyToOne(type => Playlist, playlist => playlist.savesongs)
+  playlists?: Playlist[];
+
 }
