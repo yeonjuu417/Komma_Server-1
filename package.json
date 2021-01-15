@@ -8,7 +8,8 @@
       "start": "ts-node src/index.ts",
       "dev": "nodemon src/index.ts",
       "pm2:start": "pm2 start src/index.ts",
-      "pm2:stop": "pm2 stop src/index.ts"
+      "pm2:stop": "pm2 stop src/index.ts",
+      "typeorm": "ts-node ./node_modules/typeorm/cli.js migration:create -n"
    },
    "repository": {
       "type": "git",

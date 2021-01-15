@@ -6,9 +6,7 @@ import logger from "morgan";
 import bodyParser from "body-parser";
 import { createConnection } from "typeorm";
 import "dotenv/config";
-
 const usersRouter = require('./routes/user');
-
 
 createConnection()
   .then(() => console.log("typeorm connection complete"))
@@ -26,7 +24,6 @@ app.use(
     credentials: true,
   })
 );
-
 
 app.use(
   session({

@@ -1,20 +1,20 @@
-import {Entity, PrimaryGeneratedColumn, Column, BaseEntity} from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, BaseEntity, JoinColumn, OneToOne } from "typeorm";
+import User from "./User";
 
 @Entity()
-export class Usersiteoption extends BaseEntity{
+export default class Usersiteoption extends BaseEntity {
 
-    @PrimaryGeneratedColumn()
-    id: number;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column()
-    userId: number;
+  @Column()
+  darkMode: boolean;
 
-    @Column()
-    darkMode: boolean;
+  @Column()
+  siteColor: string;
 
-    @Column()
-    siteColor: string;
+  @OneToOne(type => User)
+  @JoinColumn()
+  user: User;
 
-    @Column({default : "00:25:00"})
-    timer: string;
 }
