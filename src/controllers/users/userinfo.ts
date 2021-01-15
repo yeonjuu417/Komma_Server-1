@@ -17,12 +17,12 @@ export default async (req: Request, res: Response) => {
 
         const siteoption = await getManager()
         .createQueryBuilder(Usersiteoption, "Usersiteoption")
-        .where({ userid: data.id })
+        .where({ userId: data.id })
         .getOne();
 
         const playlist = await getManager()
         .createQueryBuilder(Playlist, "Playlist")
-        .where({ userid: data.id })
+        .where({ userId: data.id })
         .getOne();
 
         const song:Array<any> = await getManager()
