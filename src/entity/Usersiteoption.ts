@@ -1,7 +1,7 @@
 import {Entity, PrimaryGeneratedColumn, Column, BaseEntity} from "typeorm";
 
 @Entity()
-export class Usersiteoption extends BaseEntity{
+export default class Usersiteoption extends BaseEntity{
 
     @PrimaryGeneratedColumn()
     id: number;

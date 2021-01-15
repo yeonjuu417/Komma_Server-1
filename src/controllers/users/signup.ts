@@ -35,7 +35,7 @@ export default async (req: Request, res: Response) => {
                     resolve({ hashPwd: key.toString('base64'), salt });
                 });
             });
-            const {hashPwd , salt} = await createHashedPassword(password);
+            const {hashPwd , salt} = await createHashedPassword(password);            
             await getConnection()
                 .createQueryBuilder()
                 .insert()
