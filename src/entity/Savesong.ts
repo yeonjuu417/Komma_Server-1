@@ -17,6 +17,6 @@ export default class Savesong extends BaseEntity {
   customVoulume: number;
 
   @ManyToOne(type => Playlist, playlist => playlist.savesongs)
-  playlists?: Playlist[];
+  playlists: Playlist[];
 
 }
