@@ -6,38 +6,36 @@ import { getManager } from "typeorm";
 
 export default async (req: Request, res: Response) => {
 
-  const authorization = req.headers["authorization"];
-  if (!authorization) {
-    res.status(400).send({ data: null, message: "invalid access token" });
-  } else {
-    const token = authorization.split(" ")[1]; // barer 빼고 토큰만 가져오기
-    const data: any = jwt.verify(token, process.env.ACCESS_SECRET); //토큰 유효한지 확인하는 작업 verify 토큰 내용 가져오기
+    const authorization = req.headers['authorization'];
+    if (!authorization) {
+        res.status(400).send({ "data": null, "message": "invalid access token" });
+      } else {
+        const token = authorization.split(' ')[1];// barer 빼고 토큰만 가져오기 
+        const data:any = jwt.verify(token,process.env.ACCESS_SECRET);//토큰 유효한지 확인하는 작업 verify 토큰 내용 가져오기 
+        console.log(data)
 
-    const playlist = await getManager()
-      .getRepository(Playlist)
-      .createQueryBuilder("Playlist")
-      .leftJoinAndSelect("Playlist.user", "Playlist")
-      .getMany();
+        const playlist = await getManager()
+        .getRepository(Playlist)
+        .createQueryBuilder("playlist")
+        .leftJoinAndSelect("playlist.user", "playlist")
+        .getMany();
 
-    const song = await getManager()
-      .getRepository(Savesong)
-      .createQueryBuilder("Savesong")
-      .leftJoinAndSelect("savesongs.Playlist", "Savesong")
-      .getMany();
+        // const song = await getManager()
+        // .createQueryBuilder(Savesong, "Savesong")
+        // .where({ playList: playlist.id })
+        // .getMany();
 
-    // 유저한명에 대해서 플레이리스트도 여러개 존재
-    // 한개의 플레이리스트에 대해서도 여러곡 존재
-    // 나타내는법 ...
 
-    res.status(200).send({
-      userInfo: {
-        id: data.id,
-        email: data.email,
-        username: data.username,
-        darkmode: data.darkMode,
-        sitecolor: data.siteColor,
-      },
-      playlists: playlist,
-    });
-  }
-};
+        res.status(200).send({
+        "userInfo": { 
+                id: data.id, 
+                email: data.email,
+                username: data.username,
+                darkmode: data.darkMode,
+                sitecolor: data.siteColor,
+               },
+       "playlists": playlist
+        })
+    }
+}
+
