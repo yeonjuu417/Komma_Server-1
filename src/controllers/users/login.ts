@@ -20,7 +20,7 @@ export default async (req: Request, res: Response) => {
   } else {
     const { salt } = user;
 
-    const createHashedPassword = (plainpassword) =>
+    const createHashedPassword = (plainpassword: string) =>
       new Promise(async (resolve, reject) => {
         crypto.pbkdf2(plainpassword, salt, 1000, 64, 'sha512', (err, key) => {
           if (err) reject(res.status(400).send({ message: "hashPwd exists" }));
@@ -30,21 +30,21 @@ export default async (req: Request, res: Response) => {
     const hashPwd = await createHashedPassword(password);
 
     const userInfo = await getManager()
-    .createQueryBuilder(User, "User")
-    .where({ password: hashPwd })
-    .getOne()
-    
+      .createQueryBuilder(User, "User")
+      .where({ password: hashPwd })
+      .getOne()
 
     const accessToken = jwt.sign(
-        {'id' : userInfo.id, 
-        'username': userInfo.username, 
-        'email' : userInfo.email,
-        'darkMode': false, 
-        'siteColor' : "random", 
+      {
+        'id': userInfo.id,
+        'username': userInfo.username,
+        'email': userInfo.email,
+        'darkMode': false,
+        'siteColor': "random",
       },
-       process.env.ACCESS_SECRET,
-       {expiresIn : '1d'});//하루 뒤 파괴
-      res.send({accessToken : accessToken ,message : "Login successfully" })
+      process.env.ACCESS_SECRET,
+      { expiresIn: '1d' });//하루 뒤 파괴
+    res.send({ accessToken: accessToken, message: "Login successfully" })
   }
 
 };

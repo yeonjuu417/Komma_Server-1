@@ -25,7 +25,10 @@ export default class User extends BaseEntity {
   @Column()
   salt: string;
 
-  @OneToMany(type => Playlist, playlist => playlist.user)
+  @OneToMany(type => Playlist, playlist => playlist.user, {
+    onUpdate: "CASCADE",
+    onDelete: "CASCADE"
+  })
   playlists: Playlist[];
 
 }
