@@ -12,9 +12,9 @@ export default class Playlist extends BaseEntity {
   title: string;
 
   @ManyToOne(type => User, user => user.playlists)
-  user?: User;
+  user: User;
 
   @OneToMany(type => Savesong, savesong => savesong.playlists)
-  savesongs?: Savesong[];
+  savesongs: Savesong[];
 
 }

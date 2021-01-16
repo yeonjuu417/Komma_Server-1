@@ -17,9 +17,15 @@ export default class User extends BaseEntity {
   password: string;
 
   @Column()
+  darkMode: boolean;
+
+  @Column()
+  siteColor: string;
+
+  @Column()
   salt: string;
 
   @OneToMany(type => Playlist, playlist => playlist.user)
-  playlists?: Playlist[];
+  playlists: Playlist[];
 
 }
