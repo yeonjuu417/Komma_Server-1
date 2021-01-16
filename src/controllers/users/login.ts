@@ -6,6 +6,7 @@ import "dotenv/config";
 import jwt from 'jsonwebtoken'
 
 export default async (req: Request, res: Response) => {
+
   const email: string = req.body.email;
   const password: string = req.body.password;
 
@@ -33,14 +34,17 @@ export default async (req: Request, res: Response) => {
     .where({ password: hashPwd })
     .getOne()
     
+
     const accessToken = jwt.sign(
         {'id' : userInfo.id, 
         'username': userInfo.username, 
-        'email' : userInfo.email, 
+        'email' : userInfo.email,
+        'darkMode': false, 
+        'siteColor' : "random", 
       },
        process.env.ACCESS_SECRET,
        {expiresIn : '1d'});//하루 뒤 파괴
-
       res.send({accessToken : accessToken ,message : "Login successfully" })
   }
+
 };

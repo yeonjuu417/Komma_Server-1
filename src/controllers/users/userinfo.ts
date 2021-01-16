@@ -1,11 +1,11 @@
-import {  Request, Response } from "express";
+import { Request, Response } from "express";
 import Playlist from "../../entity/Playlist";
 import Savesong from "../../entity/Savesong";
-import jwt from 'jsonwebtoken'
+import jwt from "jsonwebtoken";
 import { getManager } from "typeorm";
 
-
 export default async (req: Request, res: Response) => {
+
     const authorization = req.headers['authorization'];
     if (!authorization) {
         res.status(400).send({ "data": null, "message": "invalid access token" });
@@ -38,3 +38,4 @@ export default async (req: Request, res: Response) => {
         })
     }
 }
+
