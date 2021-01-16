@@ -4,13 +4,14 @@ import { getManager } from "typeorm";
 import User from "../../entity/User";
 import crypto from "crypto";
 
+
 export default async (req: Request, res: Response) => {
   const email = req.body.email;
   const password = req.body.password;
   const username = req.body.username;
 
   if (!email || !password || !username) {
-    res.status(422).send({ message: "insufficient parameters supplied" })
+    res.status(422).send({ message: "insufficient parameters supplied" });
   }
   const isemail = await getManager()
     .createQueryBuilder(User, "User")
@@ -18,21 +19,21 @@ export default async (req: Request, res: Response) => {
     .getOne();
 
   if (isemail) {
-    res.status(409).send({ message: "email exists" })
+    res.status(409).send({ message: "email exists" });
   } else {
     const createSalt: Function = () =>
       new Promise((resolve, reject) => {
         crypto.randomBytes(64, (err, buf) => {
           if (err) reject(err);
-          resolve(buf.toString('base64'));
+          resolve(buf.toString("base64"));
         });
-      })
+      });
     const createHashedPassword: Function = (plainpassword) =>
       new Promise(async (resolve, reject) => {
         const salt = await createSalt();
-        crypto.pbkdf2(plainpassword, salt, 1000, 64, 'sha512', (err, key) => {
+        crypto.pbkdf2(plainpassword, salt, 1000, 64, "sha512", (err, key) => {
           if (err) reject(err);
-          resolve({ hashPwd: key.toString('base64'), salt });
+          resolve({ hashPwd: key.toString("base64"), salt });
         });
       });
     const { hashPwd, salt } = await createHashedPassword(password);
@@ -44,11 +45,11 @@ export default async (req: Request, res: Response) => {
         email: email,
         password: hashPwd,
         username: username,
-        salt: salt
+        darkMode : false,
+        siteColor : "random",
+        salt: salt,
       })
       .execute();
-    res.status(201).send({ message: "Sign successfully" })
+    res.status(201).send({ message: "Sign successfully" });
   }
-
-
-}
+};
