@@ -26,6 +26,7 @@ export default async (req: Request, res: Response) => {
               .set({ username:username })
               .where({id:data.id})
               .execute();
+              res.status(302).send({"message": "update successfully"})
           }
 
           //비번수정
@@ -52,7 +53,7 @@ export default async (req: Request, res: Response) => {
               .set({ password:hashPwd,salt: salt})
               .where({id:data.id})
               .execute(); 
-              res.status(302).send()
+              res.status(302).send({"message": "update successfully"})
           }
 
           //사이트 배경색상
@@ -63,7 +64,7 @@ export default async (req: Request, res: Response) => {
               .set({ siteColor: siteColor})
               .where({id:data.id})
               .execute(); 
-              res.status(302).send()
+              res.status(302).send({"message": "update successfully"})
           }
 
           // if(red){
@@ -156,7 +157,7 @@ export default async (req: Request, res: Response) => {
               .set({ darkMode: darkMode})
               .where({id:data.id})
               .execute(); 
-              res.status(302).send()
+              res.status(302).send({"message": "update successfully"})
           }
       }
 }
