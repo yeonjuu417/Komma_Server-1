@@ -33,18 +33,23 @@ export default async (req: Request, res: Response) => {
       .createQueryBuilder(User, "User")
       .where({ password: hashPwd })
       .getOne()
-
-    const accessToken = jwt.sign(
-      {
-        'id': userInfo.id,
-        'username': userInfo.username,
-        'email': userInfo.email,
-        'darkMode': false,
-        'siteColor': "random",
-      },
-      process.env.ACCESS_SECRET,
-      { expiresIn: '1d' });//하루 뒤 파괴
-    res.send({ accessToken: accessToken, message: "Login successfully" })
+      
+      if(!userInfo){
+        res.status(400).send({ data: null, message: "Passwords do not match" })
+      }else{
+        const accessToken = jwt.sign(
+          {
+            'id': userInfo.id,
+            'username': userInfo.username,
+            'email': userInfo.email,
+            'darkMode': false,
+            'siteColor': "random",
+          },
+          process.env.ACCESS_SECRET,
+          { expiresIn: '1d' });//하루 뒤 파괴
+        res.send({ accessToken: accessToken, message: "Login successfully" })
+      }
+    
   }
 
 };
