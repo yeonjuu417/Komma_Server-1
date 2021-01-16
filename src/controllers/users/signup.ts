@@ -45,8 +45,8 @@ export default async (req: Request, res: Response) => {
         email: email,
         password: hashPwd,
         username: username,
-        // darkMode : false,
-        // siteColor : "random",
+        darkMode : false,
+        siteColor : "random",
         salt: salt,
       })
       .execute();
