@@ -4,7 +4,6 @@ import { getManager } from "typeorm";
 import User from "../../entity/User";
 import crypto from "crypto";
 
-
 export default async (req: Request, res: Response) => {
   const email = req.body.email;
   const password = req.body.password;
@@ -45,8 +44,8 @@ export default async (req: Request, res: Response) => {
         email: email,
         password: hashPwd,
         username: username,
-        darkMode : false,
-        siteColor : "random",
+        darkMode: false,
+        siteColor: "random",
         salt: salt,
       })
       .execute();

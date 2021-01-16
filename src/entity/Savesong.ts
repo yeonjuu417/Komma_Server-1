@@ -16,7 +16,10 @@ export default class Savesong extends BaseEntity {
   @Column()
   customVoulume: number;
 
-  @ManyToOne(type => Playlist, playlist => playlist.savesongs)
-  playlists: Playlist[];
+  @ManyToOne(type => Playlist, playlist => playlist.savesongs, {
+    onUpdate: "CASCADE",
+    onDelete: "CASCADE"
+  })
+  playlist?: Playlist[];
 
 }

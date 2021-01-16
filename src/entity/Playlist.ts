@@ -11,10 +11,16 @@ export default class Playlist extends BaseEntity {
   @Column()
   title: string;
 
-  @ManyToOne(type => User, user => user.playlists)
+  @ManyToOne(type => User, user => user.playlists, {
+    onUpdate: "CASCADE",
+    onDelete: "CASCADE"
+  })
   user: User;
 
-  @OneToMany(type => Savesong, savesong => savesong.playlists)
+  @OneToMany(type => Savesong, savesong => savesong.playlist, {
+    onUpdate: "CASCADE",
+    onDelete: "CASCADE"
+  })
   savesongs: Savesong[];
 
 }
