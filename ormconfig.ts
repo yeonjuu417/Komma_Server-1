@@ -6,21 +6,27 @@ module.exports = {
    "port": process.env.DATABASE_PORT || 3306,
    "username": process.env.DATABASE_USERNAME || "root",
    "password": process.env.DATABASE_PASSWORD || "1234",
-   "database":  process.env.DATABASE_NAME || "Komma",
+   "database": process.env.DATABASE_NAME || "Komma",
    "synchronize": true,
    "logging": false,
    "entities": [
-      "src/entity/**/*.ts"
+      "src/database/entity/**/*.ts"
    ],
    "migrations": [
-      "src/migration/**/*.ts"
+      "src/database/migration/**/*.ts"
+   ],
+   "seeds": [
+      "src/database/seeder/**/*.ts"
+   ],
+   "factories": [
+      "src/database/factories/**/*{.ts,.js}"
    ],
    "subscribers": [
-      "src/subscriber/**/*.ts"
+      "src/database/subscriber/**/*.ts"
    ],
    "cli": {
-      "entitiesDir": "src/entity",
-      "migrationsDir": "src/migration",
-      "subscribersDir": "src/subscriber"
+      "entitiesDir": "src/database/entity",
+      "migrationsDir": "src/database/migration",
+      "subscribersDir": "src/database/subscriber"
    }
 }

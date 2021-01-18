@@ -1,8 +1,8 @@
 import {  Request, Response } from "express";
 import * as jwt from "jsonwebtoken";
 import { getConnection } from "typeorm";
-import User from "../../entity/User";
-import Playlist from "../../entity/Playlist";
+import User from "../../database/entity/User";
+import Playlist from "../../database/entity/Playlist";
 
 export default async (req: Request, res: Response) => {
     const authorization = req.headers['authorization'];

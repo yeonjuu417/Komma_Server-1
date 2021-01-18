@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import jwt from 'jsonwebtoken';
-import User from "../../entity/User";
+import User from "../../database/entity/User";
 import { getConnection } from "typeorm";
 import crypto from "crypto";
 

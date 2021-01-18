@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { getManager } from "typeorm";
-import User from "../../entity/User";
+import User from "../../database/entity/User";
 import crypto from "crypto";
 import "dotenv/config";
 import jwt from 'jsonwebtoken'
