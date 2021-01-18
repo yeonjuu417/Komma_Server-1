@@ -1,6 +1,6 @@
 import {  Request, Response } from "express";
 import * as jwt from "jsonwebtoken";
-import Playlist from "../../entity/Playlist";
+import Playlist from "../../database/entity/Playlist";
 import {getConnection} from "typeorm";
 
 export default async (req: Request, res: Response) => {

@@ -9,7 +9,8 @@
       "dev": "nodemon src/index.ts",
       "pm2:start": "pm2 start src/index.ts",
       "pm2:stop": "pm2 stop src/index.ts",
-      "typeorm:create": "ts-node ./node_modules/typeorm/cli.js migration:create -n"
+      "typeorm:create": "ts-node ./node_modules/typeorm/cli.js migration:create -n",
+      "typeorm:seeder": "ts-node ./node_modules/typeorm-seeding/dist/cli.js seed"
    },
    "repository": {
       "type": "git",
@@ -57,6 +58,7 @@
       "passport-jwt": "^4.0.0",
       "passport-local": "^1.0.0",
       "reflect-metadata": "^0.1.10",
-      "typeorm": "^0.2.29"
+      "typeorm": "^0.2.29",
+      "typeorm-seeding": "^1.6.1"
    }
 }

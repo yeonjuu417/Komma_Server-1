@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import * as jwt from "jsonwebtoken";
 import { getManager } from "typeorm";
-import User from "../../entity/User";
+import User from "../../database/entity/User";
 
 export default async (req: Request, res: Response) => {
   const authorization = req.headers['authorization'];

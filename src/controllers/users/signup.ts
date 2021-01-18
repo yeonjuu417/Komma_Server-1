@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { getConnection } from "typeorm";
 import { getManager } from "typeorm";
-import User from "../../entity/User";
+import User from "../../database/entity/User";
 import crypto from "crypto";
 
 export default async (req: Request, res: Response) => {
