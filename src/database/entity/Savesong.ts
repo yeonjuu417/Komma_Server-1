@@ -14,12 +14,12 @@ export default class Savesong extends BaseEntity {
   soundFile: string;
 
   @Column()
-  customVoulume: number;
+  customVolume: number;
 
   @ManyToOne(type => Playlist, playlist => playlist.savesongs, {
     onUpdate: "CASCADE",
     onDelete: "CASCADE"
   })
-  playlist?: Playlist[];
+  playlist: Playlist;
 
 }
