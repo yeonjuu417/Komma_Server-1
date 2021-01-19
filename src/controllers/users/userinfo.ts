@@ -15,7 +15,7 @@ export default async (req: Request, res: Response) => {
       .createQueryBuilder(User, "user")
       .innerJoinAndSelect("user.playlists", "playlist")
       .innerJoinAndSelect("playlist.savesongs", "savesong")
-      .where("user.id = :id", { id: data.id})
+      .where("user.id = :id", { id: data.id })
       .getOne();
 
     res.status(200).send({

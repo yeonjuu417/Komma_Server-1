@@ -1,13 +1,10 @@
 import { Request, Response } from "express";
-import { getConnection } from "typeorm";
-import { getManager } from "typeorm";
+import { getConnection, getManager } from "typeorm";
 import User from "../../database/entity/User";
 import crypto from "crypto";
 
 export default async (req: Request, res: Response) => {
-  const email = req.body.email;
-  const password = req.body.password;
-  const username = req.body.username;
+  const { email, password, username } = req.body;
 
   if (!email || !password || !username) {
     res.status(422).send({ message: "insufficient parameters supplied" });
