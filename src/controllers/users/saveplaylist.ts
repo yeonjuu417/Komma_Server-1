@@ -31,7 +31,7 @@ export default async (req: Request, res: Response) => {
       .execute()
       .then(data => {
         addPlayListId(data.identifiers[0].id)
-        console.log(savesongs);
+
         getManager()
           .createQueryBuilder()
           .insert()
