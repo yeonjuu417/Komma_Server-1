@@ -13,12 +13,12 @@ export default async (req: Request, res: Response) => {
   } else {
     const token = authorization.split(' ')[1];
        //사이트 배경색상
-       if (siteColor) {
+       if (sitecolor) {
         let data: any = jwt.verify(token, process.env.ACCESS_SECRET);
         await getConnection()
           .createQueryBuilder()
           .update(User)
-          .set({ siteColor: siteColor })
+          .set({ siteColor: sitecolor })
           .where({ id: data.id })
           .execute();
         res.status(200).send({ "message": "update successfully" })
