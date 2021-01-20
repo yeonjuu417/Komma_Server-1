@@ -16,17 +16,35 @@ export default async (req: Request, res: Response) => {
       .innerJoinAndSelect("user.playlists", "playlist")
       .innerJoinAndSelect("playlist.savesongs", "savesong")
       .where("user.id = :id", { id: data.id })
-      .getOne();
+      .getOne()
 
-    res.status(200).send({
-      "userInfo": {
-        id: UserInfo.id,
-        email: UserInfo.email,
-        username: UserInfo.username,
-        darkmode: UserInfo.darkMode,
-        sitecolor: UserInfo.siteColor,
-      },
-      "playlists": UserInfo.playlists
-    })
+    if (!UserInfo) {
+      await getManager()
+      .createQueryBuilder(User, "user")
+      .where({ id: data.id})
+      .getOne()
+      .then(UserInfo => {
+        res.status(200).send({
+          "userInfo": {
+            id: UserInfo.id,
+            email: UserInfo.email,
+            username: UserInfo.username,
+            darkmode: UserInfo.darkMode,
+            sitecolor: UserInfo.siteColor,
+          }
+        })
+      })
+    } else {
+      res.status(200).send({
+        "userInfo": {
+          id: UserInfo.id,
+          email: UserInfo.email,
+          username: UserInfo.username,
+          darkmode: UserInfo.darkMode,
+          sitecolor: UserInfo.siteColor,
+        },
+        "playlists": UserInfo.playlists
+      })
+    }
   }
 }
