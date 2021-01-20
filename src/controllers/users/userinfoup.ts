@@ -6,7 +6,7 @@ import crypto from "crypto";
 
 export default async (req: Request, res: Response) => {
   const authorization = req.headers['authorization'];
-  const { username, password, darkMode, siteColor } = req.body;
+  const { username, password, darkMode, sitecolor } = req.body;
 
   if (!authorization) {
     res.status(400).send({ "data": null, "message": "invalid access token" });
@@ -64,8 +64,6 @@ export default async (req: Request, res: Response) => {
         .execute();
       res.status(200).send({ "message": "update successfully" })
     }
-
- 
 
     //다크모드
     if (darkMode) {
