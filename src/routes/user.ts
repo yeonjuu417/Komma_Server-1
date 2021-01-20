@@ -11,8 +11,8 @@ router.post('/logout', usersController.logout);
 router.post('/signup', usersController.signup);
 // * get /users/userinfo
 router.get('/userinfo', usersController.userinfo);
-// * get /users/userinfoup
-router.put('/userinfoup', usersController.userinfoup);
+// * post /users/userinfoup
+router.post('/userinfoup', usersController.userinfoup);
 // * get /users/songlist
 router.get('/songlist', usersController.songlist);
 // * post /users/saveplaylist
