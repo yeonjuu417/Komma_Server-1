@@ -11,10 +11,12 @@ export default async (req: Request, res: Response) => {
   if (!authorization) {
     res.status(400).send({ "data": null, "message": "invalid access token" });
   } else {
+    
     const token = authorization.split(' ')[1];
-       //사이트 배경색상
+    let data: any = jwt.verify(JSON.parse(token), process.env.ACCESS_SECRET);
+       
+  //사이트 배경색상
        if (sitecolor) {
-        let data: any = jwt.verify(token, process.env.ACCESS_SECRET);
         await getConnection()
           .createQueryBuilder()
           .update(User)
@@ -26,8 +28,7 @@ export default async (req: Request, res: Response) => {
 
 
     //이름수정
-    if (username) {
-      let data: any = jwt.verify(JSON.parse(token), process.env.ACCESS_SECRET);
+    if (username) { 
       await getConnection()
         .createQueryBuilder()
         .update(User)
@@ -39,7 +40,6 @@ export default async (req: Request, res: Response) => {
 
     //비번수정
     if (password) {
-      let data: any = jwt.verify(JSON.parse(token), process.env.ACCESS_SECRET);
       const createSalt: Function = () =>
         new Promise((resolve, reject) => {
           crypto.randomBytes(64, (err, buf) => {
@@ -67,7 +67,6 @@ export default async (req: Request, res: Response) => {
 
     //다크모드
     if (darkMode) {
-      let data: any = jwt.verify(JSON.parse(token), process.env.ACCESS_SECRET);
       await getConnection()
         .createQueryBuilder()
         .update(User)
