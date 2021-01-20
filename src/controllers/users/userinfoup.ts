@@ -6,7 +6,7 @@ import crypto from "crypto";
 
 export default async (req: Request, res: Response) => {
   const authorization = req.headers['authorization'];
-  const { username, password, darkMode, siteColor } = req.body;
+  const { username, password, darkMode, sitecolor } = req.body;
 
   if (!authorization) {
     res.status(400).send({ "data": null, "message": "invalid access token" });
@@ -53,11 +53,11 @@ export default async (req: Request, res: Response) => {
     }
 
     //사이트 배경색상
-    if (siteColor) {
+    if (sitecolor) {
       await getConnection()
         .createQueryBuilder()
         .update(User)
-        .set({ siteColor: siteColor })
+        .set({ siteColor: sitecolor })
         .where({ id: data.id })
         .execute();
       res.status(200).send({ "message": "update successfully" })
