@@ -13,7 +13,7 @@ export default async (req: Request, res: Response) => {
     res.status(400).send({ "data": null, "message": "invalid access token" });
   } else {
     const token = authorization.split(' ')[1];
-    const data: any = jwt.verify(token, process.env.ACCESS_SECRET);
+    const data: any = jwt.verify(JSON.parse(token), process.env.ACCESS_SECRET);
 
     //이름수정
     if (username) {
