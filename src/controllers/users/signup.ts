@@ -42,7 +42,7 @@ export default async (req: Request, res: Response) => {
         password: hashPwd,
         username: username,
         darkMode: false,
-        siteColor: "random",
+        siteColor: "blue",
         salt: salt,
       })
       .execute();
