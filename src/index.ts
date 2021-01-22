@@ -43,7 +43,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/users', usersRouter);
-app.use('/sounds', express.static('./src/sound'));
+app.use('/sounds', express.static('./src/sounds'));
 
 const PORT = 2527;
 
