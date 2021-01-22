@@ -15,7 +15,7 @@ export default class Songlist extends BaseEntity {
   @Column()
   soundFile: string;
 
-  @Column({ default: 50 })
-  defaltVoulume: number;
+  @Column({ default: "0.4" })
+  defaltVoulume: string;
 
 }
