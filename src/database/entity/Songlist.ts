@@ -18,4 +18,7 @@ export default class Songlist extends BaseEntity {
   @Column({ default: "0.4" })
   defaltVoulume: string;
 
+  @Column({ default: false })
+  play: boolean;
+
 }

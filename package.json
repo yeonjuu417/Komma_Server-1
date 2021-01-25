@@ -11,7 +11,8 @@
       "pm2:stop": "pm2 stop src/index.ts",
       "typeorm:create": "ts-node ./node_modules/typeorm/cli.js migration:create -n",
       "typeorm:run": "ts-node ./node_modules/typeorm/cli.js migration:run",
-      "typeorm:rollback": "ts-node ./node_modules/typeorm/cli.js migration:revert",
+      "typeorm:revert": "ts-node ./node_modules/typeorm/cli.js migration:revert",
+      "typeorm:show": "ts-node ./node_modules/typeorm/cli.js migration:show",
       "typeorm:seeder": "ts-node ./node_modules/typeorm-seeding/dist/cli.js seed"
    },
    "repository": {
