@@ -16,8 +16,8 @@ export default class Savesong extends BaseEntity {
   @Column()
   soundFile: string;
 
-  @Column()
-  customVolume: string;
+  @Column({ type: "float" })
+  customVolume: number;
 
   @Column({ default: false })
   play: boolean;
