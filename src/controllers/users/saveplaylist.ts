@@ -4,7 +4,7 @@ import { getManager, createConnection, AdvancedConsoleLogger } from "typeorm";
 import { User, Playlist, Savesong } from "../../database/entity";
 
 export default async (req: Request, res: Response) => {
-  const { title, savesongs } = req.body;
+  const { title, savesongs, icon } = req.body;
 
   const addPlayListId = function (param: number) {
     return savesongs.map(savesong => {
@@ -26,6 +26,7 @@ export default async (req: Request, res: Response) => {
       .into(Playlist)
       .values({
         title: title,
+        icon: icon,
         user: data.id
       })
       .execute()
