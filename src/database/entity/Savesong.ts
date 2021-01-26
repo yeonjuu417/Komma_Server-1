@@ -19,6 +19,9 @@ export default class Savesong extends BaseEntity {
   @Column()
   customVolume: string;
 
+  @Column({ default: false })
+  play: boolean;
+
   @ManyToOne(type => Playlist, playlist => playlist.savesongs, {
     onUpdate: "CASCADE",
     onDelete: "CASCADE"
