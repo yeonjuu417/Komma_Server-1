@@ -8,13 +8,16 @@ export default class Savesong extends BaseEntity {
   id: number;
 
   @Column()
+  icon: string;
+
+  @Column()
   title: string;
 
   @Column()
   soundFile: string;
 
   @Column()
-  customVolume: number;
+  customVolume: string;
 
   @ManyToOne(type => Playlist, playlist => playlist.savesongs, {
     onUpdate: "CASCADE",
