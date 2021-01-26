@@ -7,8 +7,5 @@ export default async (req: Request, res: Response) => {
   .createQueryBuilder(Songlist, "Songlist")
   .getMany()
   .then(data => {
-    console.log(data); 
-    res.status(200).send({
-    "songlist": data
-  })})
+    res.status(200).send({ "songlist": data })})
 }
