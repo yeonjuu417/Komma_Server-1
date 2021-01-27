@@ -14,6 +14,9 @@ export default class Playlist extends BaseEntity {
   @Column()
   icon: string;
 
+  @Column({ default: false })
+  play: boolean;
+
   @ManyToOne(type => User, user => user.playlists, {
     onUpdate: "CASCADE",
     onDelete: "CASCADE"
