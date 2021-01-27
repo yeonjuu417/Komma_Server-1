@@ -8,7 +8,7 @@ export default class Savesong extends BaseEntity {
   id: number;
 
   @Column()
-  icon: string;
+  iconImg: string;
 
   @Column()
   title: string;
@@ -17,7 +17,7 @@ export default class Savesong extends BaseEntity {
   soundFile: string;
 
   @Column({ type: "float" })
-  customVolume: number;
+  defaultVolme: number;
 
   @Column({ default: false })
   play: boolean;
