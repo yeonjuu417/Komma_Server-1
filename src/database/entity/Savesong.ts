@@ -5,8 +5,11 @@ import Playlist from "./Playlist";
 export default class Savesong extends BaseEntity {
 
   @PrimaryGeneratedColumn()
-  id: number;
+  savesongId: number;
 
+  @Column()
+  id: number;
+  
   @Column()
   iconImg: string;
 
