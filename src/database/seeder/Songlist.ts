@@ -145,13 +145,13 @@ export default class CreateSongList implements Seeder {
       },
       {
         title: "숲속",
-        iconImg: "https://i.imgur.com/pD7Qvoq.png",
+        iconImg: "https://i.imgur.com/ei2cFAK.png",
         soundFile: "http://www.kommaa.shop/sounds/forest.mp3",
         defaultVolume: 0.4
       },
       {
         title: "종",
-        iconImg: "https://i.imgur.com/AouG75Z.png",
+        iconImg: "https://i.imgur.com/vkUgljs.png",
         soundFile: "http://www.kommaa.shop/sounds/bell.mp3",
         defaultVolume: 0.4
       },
@@ -163,7 +163,7 @@ export default class CreateSongList implements Seeder {
       },
       {
         title: "풀벌레",
-        iconImg: "https://i.imgur.com/VPZH4re.png",
+        iconImg: "https://i.imgur.com/a8jLvQs.png",
         soundFile: "http://www.kommaa.shop/sounds/bug.mp3",
         defaultVolume: 0.4
       },
@@ -175,13 +175,13 @@ export default class CreateSongList implements Seeder {
       },
       {
         title: "눈",
-        iconImg: "https://i.imgur.com/J1ExK6F.png",
+        iconImg: "https://i.imgur.com/rN16LCI.png",
         soundFile: "http://www.kommaa.shop/sounds/snow.mp3",
         defaultVolume: 0.4
       },
       {
-        title: "폭포",
-        iconImg: "https://i.imgur.com/zSrH0tv.png",
+        title: "계곡",
+        iconImg: "https://i.imgur.com/GHivueF.png",
         soundFile: "http://www.kommaa.shop/sounds/valley.mp3",
         defaultVolume: 0.4
       },
