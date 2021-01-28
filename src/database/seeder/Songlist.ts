@@ -181,8 +181,8 @@ export default class CreateSongList implements Seeder {
       },
       {
         title: "폭포",
-        iconImg: "https://i.imgur.com/iFqznOU.png",
-        soundFile: "http://www.kommaa.shop/sounds/velley.mp3",
+        iconImg: "https://i.imgur.com/zSrH0tv.png",
+        soundFile: "http://www.kommaa.shop/sounds/valley.mp3",
         defaultVolume: 0.4
       },
     ];
