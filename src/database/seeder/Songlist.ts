@@ -19,7 +19,7 @@ export default class CreateSongList implements Seeder {
       },
       {
         title: "낙엽",
-        iconImg: "https://i.imgur.com/ZNEjLZq.png",
+        iconImg: "https://i.imgur.com/HnZDCjb.png",
         soundFile: "http://www.kommaa.shop/sounds/leaves.mp3",
         defaultVolume: 0.4
       },
@@ -121,7 +121,7 @@ export default class CreateSongList implements Seeder {
       },
       {
         title: "매미",
-        iconImg: "https://i.imgur.com/G0Vt9fA.png",
+        iconImg: "https://i.imgur.com/xLdYxZL.png",
         soundFile: "http://www.kommaa.shop/sounds/mami.mp3",
         defaultVolume: 0.4
       },
@@ -133,19 +133,19 @@ export default class CreateSongList implements Seeder {
       },
       {
         title: "새",
-        iconImg: "https://i.imgur.com/Eo0aNhm.png",
+        iconImg: "https://i.imgur.com/SY25WVq.png",
         soundFile: "http://www.kommaa.shop/sounds/bird.mp3",
         defaultVolume: 0.4
       },
       {
         title: "교회",
-        iconImg: "https://i.imgur.com/iyo7Oxs.png",
+        iconImg: "https://i.imgur.com/ixbmiS3.png",
         soundFile: "http://www.kommaa.shop/sounds/church.mp3",
         defaultVolume: 0.4
       },
       {
         title: "숲속",
-        iconImg: "https://i.imgur.com/7jxHEe9.png",
+        iconImg: "https://i.imgur.com/pD7Qvoq.png",
         soundFile: "http://www.kommaa.shop/sounds/forest.mp3",
         defaultVolume: 0.4
       },
@@ -163,7 +163,7 @@ export default class CreateSongList implements Seeder {
       },
       {
         title: "풀벌레",
-        iconImg: "https://i.imgur.com/s4cMiXr.png",
+        iconImg: "https://i.imgur.com/VPZH4re.png",
         soundFile: "http://www.kommaa.shop/sounds/bug.mp3",
         defaultVolume: 0.4
       },
