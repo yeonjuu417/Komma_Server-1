@@ -18,9 +18,9 @@ export default class CreateSongList implements Seeder {
         defaultVolume: 0.4
       },
       {
-        title: "도마",
-        iconImg: "https://i.imgur.com/gnBFt6F.png",
-        soundFile: "http://www.kommaa.shop/sounds/cooking.mp3",
+        title: "낙엽",
+        iconImg: "https://i.imgur.com/ZNEjLZq.png",
+        soundFile: "http://www.kommaa.shop/sounds/leaves.mp3",
         defaultVolume: 0.4
       },
       {
@@ -60,12 +60,6 @@ export default class CreateSongList implements Seeder {
         defaultVolume: 0.4
       },
       {
-        title: "에어컨",
-        iconImg: "https://i.imgur.com/kBTWJYN.png",
-        soundFile: "http://www.kommaa.shop/sounds/air_conditioner.mp3",
-        defaultVolume: 0.4
-      },
-      {
         title: "연필",
         iconImg: "https://i.imgur.com/taXU5VD.png",
         soundFile: "http://www.kommaa.shop/sounds/pencil.mp3",
@@ -102,12 +96,6 @@ export default class CreateSongList implements Seeder {
         defaultVolume: 0.4
       },
       {
-        title: "청소기",
-        iconImg: "https://i.imgur.com/JRt5C4Z.png",
-        soundFile: "http://www.kommaa.shop/sounds/cleaner.mp3",
-        defaultVolume: 0.4
-      },
-      {
         title: "카페",
         iconImg: "https://i.imgur.com/RYe9umH.png",
         soundFile: "http://www.kommaa.shop/sounds/cafe.mp3",
@@ -120,9 +108,81 @@ export default class CreateSongList implements Seeder {
         defaultVolume: 0.4
       },
       {
+        title: "갈매기",
+        iconImg: "https://i.imgur.com/fEMbGe7.png",
+        soundFile: "http://www.kommaa.shop/sounds/galmagi.mp3",
+        defaultVolume: 0.4
+      },
+      {
+        title: "대나무",
+        iconImg: "https://i.imgur.com/smrwxqW.png",
+        soundFile: "http://www.kommaa.shop/sounds/tree.mp3",
+        defaultVolume: 0.4
+      },
+      {
+        title: "매미",
+        iconImg: "https://i.imgur.com/G0Vt9fA.png",
+        soundFile: "http://www.kommaa.shop/sounds/mami.mp3",
+        defaultVolume: 0.4
+      },
+      {
+        title: "보리밭",
+        iconImg: "https://i.imgur.com/cVQSduZ.png",
+        soundFile: "http://www.kommaa.shop/sounds/bori.mp3",
+        defaultVolume: 0.4
+      },
+      {
+        title: "새",
+        iconImg: "https://i.imgur.com/Eo0aNhm.png",
+        soundFile: "http://www.kommaa.shop/sounds/bird.mp3",
+        defaultVolume: 0.4
+      },
+      {
+        title: "교회",
+        iconImg: "https://i.imgur.com/iyo7Oxs.png",
+        soundFile: "http://www.kommaa.shop/sounds/church.mp3",
+        defaultVolume: 0.4
+      },
+      {
+        title: "숲속",
+        iconImg: "https://i.imgur.com/7jxHEe9.png",
+        soundFile: "http://www.kommaa.shop/sounds/forest.mp3",
+        defaultVolume: 0.4
+      },
+      {
+        title: "종",
+        iconImg: "https://i.imgur.com/AouG75Z.png",
+        soundFile: "http://www.kommaa.shop/sounds/bell.mp3",
+        defaultVolume: 0.4
+      },
+      {
+        title: "타자",
+        iconImg: "https://i.imgur.com/CUHNW2H.png",
+        soundFile: "http://www.kommaa.shop/sounds/typing.mp3",
+        defaultVolume: 0.4
+      },
+      {
+        title: "풀벌레",
+        iconImg: "https://i.imgur.com/s4cMiXr.png",
+        soundFile: "http://www.kommaa.shop/sounds/bug.mp3",
+        defaultVolume: 0.4
+      },
+      {
+        title: "비",
+        iconImg: "https://i.imgur.com/80XYaTr.png",
+        soundFile: "http://www.kommaa.shop/sounds/rain.mp3",
+        defaultVolume: 0.4
+      },
+      {
+        title: "눈",
+        iconImg: "https://i.imgur.com/J1ExK6F.png",
+        soundFile: "http://www.kommaa.shop/sounds/snow.mp3",
+        defaultVolume: 0.4
+      },
+      {
         title: "폭포",
         iconImg: "https://i.imgur.com/iFqznOU.png",
-        soundFile: "http://www.kommaa.shop/sounds/waterfall.mp3",
+        soundFile: "http://www.kommaa.shop/sounds/velley.mp3",
         defaultVolume: 0.4
       },
     ];
