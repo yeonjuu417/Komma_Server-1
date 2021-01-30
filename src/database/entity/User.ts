@@ -17,9 +17,6 @@ export default class User extends BaseEntity {
   password: string;
 
   @Column()
-  darkMode: boolean;
-
-  @Column()
   siteColor: string;
 
   @Column()
@@ -31,4 +28,23 @@ export default class User extends BaseEntity {
   })
   playlists: Playlist[];
 
+  static async insertInfo(data: object): Promise<User | undefined> {
+    await this.createQueryBuilder()
+      .insert()
+      .into(User)
+      .values(data)
+      .execute();
+
+    return;
+  }
+
+  static async changeInfo(id: number, data: object): Promise<User | undefined> {
+    await this.createQueryBuilder()
+      .update(User)
+      .set(data)
+      .where("id = :id", { id })
+      .execute();
+
+    return this.findOne({ id });
+  }
 }

@@ -4,7 +4,7 @@ import Savesong from "./Savesong";
 
 @Entity()
 export default class Playlist extends BaseEntity {
-  
+
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -29,4 +29,37 @@ export default class Playlist extends BaseEntity {
   })
   savesongs: Savesong[];
 
+  static async insertInfo(data: object): Promise<Playlist | undefined> {
+    const result = await this.createQueryBuilder()
+      .insert()
+      .into(Playlist)
+      .values(data)
+      .execute()
+      .then(data => {
+        return data.identifiers[0].id;
+      })
+    return result;
+  }
+
+  static async changeTitle(id: number, userId: number, data: object): Promise<Playlist | undefined> {
+    await this.createQueryBuilder()
+      .update(Playlist)
+      .set(data)
+      .where("id = :id", { id: id })
+      .andWhere("user = :user", { user: userId })
+      .execute();
+
+    return this.findOne({ id });
+  }
+
+  static async deletePlayList(id: number, userId: number): Promise<Playlist | undefined> {
+    await this.createQueryBuilder()
+      .delete()
+      .from(Playlist)
+      .where("id = :id", { id: id })
+      .andWhere("user = :user", { user: userId })
+      .execute();
+
+    return this.findOne({ id });
+  }
 }
