@@ -7,6 +7,7 @@ import bodyParser from "body-parser";
 import { createConnection } from "typeorm";
 import "dotenv/config";
 const usersRouter = require('./routes/user');
+const playlistRouter = require("./routes/playlist");
 
 createConnection()
   .then(() => console.log("typeorm connection complete"))
@@ -43,6 +44,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/users', usersRouter);
+app.use('/playlist', playlistRouter);
 app.use('/sounds', express.static('./src/sounds'));
 
 const PORT = 2527;

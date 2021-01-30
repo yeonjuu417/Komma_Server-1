@@ -31,4 +31,15 @@ export default class Savesong extends BaseEntity {
   })
   playlist: Playlist;
 
+  static async insertInfo(data: object): Promise<Savesong | undefined> {
+    const result = await this.createQueryBuilder()
+      .insert()
+      .into(Savesong)
+      .values(data)
+      .execute()
+      .then(data => {
+        return data.identifiers[0].id;
+      })
+      return result;
+  }
 }
