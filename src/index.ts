@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(
   cors({
-    origin: ['http://kommaproject.s3-website.ap-northeast-2.amazonaws.com','http://komma.co.kr.s3-website.ap-northeast-2.amazonaws.com'],
+    origin: ['https://komma.co.kr'],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
     credentials: true,
   })
