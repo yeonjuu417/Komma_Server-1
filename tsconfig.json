@@ -1,4 +1,5 @@
 {
+
   "compilerOptions": {
     // 컴파일 결과물을 어떤 버전으로 할 것인지
     "target": "ES6",
@@ -23,4 +24,5 @@
   "include": ["src/**/*"],
   // 컴파일에서 제외되는 파일들
   "exclude": ["node_modules"]
+
 }
